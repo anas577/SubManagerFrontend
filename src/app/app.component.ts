@@ -1,4 +1,4 @@
- import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { PageHeaderComponent } from "./page-header/page-header.component";
 import { CommonModule } from "@angular/common";
@@ -11,7 +11,6 @@ import { SideNavComponent } from "./side-nav/side-nav.component";
 import { MatSidenav, MatSidenavModule } from "@angular/material/sidenav";
 import { MatButtonModule } from "@angular/material/button";
 import { PageFooterComponent } from "./page-footer/page-footer.component";
- import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: "app-root",
@@ -29,7 +28,6 @@ import { PageFooterComponent } from "./page-footer/page-footer.component";
     MatSidenavModule,
     MatButtonModule,
     PageFooterComponent,
-    HttpClientModule
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
