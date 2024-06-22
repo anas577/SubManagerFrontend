@@ -16,7 +16,7 @@ export class SideNavComponent {
   sideNavContent: SideNavItem[] = [
     {
       title: "Dashboard",
-      link: "dashboard",
+      link: "dashboard/view",
     },
     {
       title: "Subscriptions",
@@ -24,11 +24,11 @@ export class SideNavComponent {
     },
     {
       title: "Notifications",
-      link: "notifications",
+      link: "notifications/view",
     },
     {
       title: "Settings",
-      link: "settings",
+      link: "settings/view",
     },
   ];
 }
