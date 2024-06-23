@@ -9,3 +9,9 @@ export interface Subscription {
   paymentCost: number;
   description: string;
 }
+
+export interface Provider {
+  id : number;
+  name: string;
+  image: string;
+}

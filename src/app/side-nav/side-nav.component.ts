@@ -19,6 +19,10 @@ export class SideNavComponent {
       link: "dashboard/view",
     },
     {
+      title: "Providers",
+      link: "providers/list",
+    },
+    {
       title: "Subscriptions",
       link: "subscriptions/list",
     },

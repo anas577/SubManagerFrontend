@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Subscription } from "../models/model";
 
 @Injectable({
   providedIn: "root",
@@ -13,5 +12,9 @@ export class ApiService {
 
   getAllSubscriptions(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/subscriptions`);
+  }
+
+  getProviders(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/providers`);
   }
 }
