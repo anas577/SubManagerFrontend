@@ -17,4 +17,9 @@ export class ApiService {
   getProviders(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/providers`);
   }
+
+  changeStatus(id: any) {
+    return this.http.put(`${this.baseUrl}/subscriptions/changeStatus/${id}`, {});
+
+  }
 }

@@ -29,4 +29,19 @@ export class SubscriptionsListComponent implements OnInit {
       },
     );
   }
+
+  changeStatus(id:any) {
+    this.apiService.changeStatus(id).subscribe(
+      () => {
+        this.subscriptions = this.subscriptions.map((subscription) => {
+          if (subscription.id === id) {
+            subscription.active = !subscription.active;
+          }
+          return subscription;
+        });
+      },
+      (error) => console.error("Error changing subscription status", error),
+    );
+
+  }
 }

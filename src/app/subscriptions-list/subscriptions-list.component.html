@@ -1,22 +1,31 @@
 <table mat-table [dataSource]="subscriptions">
-    <!-- ID Column -->
+    <!-- Name Column -->
     <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{element.provider.name}}</td>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- Status Column -->
     <ng-container matColumnDef="provider">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <th mat-header-cell *matHeaderCellDef>Status</th>
         <td mat-cell *matCellDef="let element">{{element.status}}</td>
     </ng-container>
 
-    <!-- Email Column -->
+    <!-- Payment cost Column -->
     <ng-container matColumnDef="paymentCost">
         <th mat-header-cell *matHeaderCellDef>Price</th>
         <td mat-cell *matCellDef="let element">{{element.paymentCost}}</td>
     </ng-container>
 
+    <!-- Actions Column -->
+    <ng-container matColumnDef="Switch-Status">
+        <th mat-header-cell *matHeaderCellDef>Switch Status</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="changeStatus(element.id)">
+            {{element.status === 'ACTIVE' ? 'Deactivate' : 'Activate'}}
+          </button>
+        </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
     <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
 </table>
