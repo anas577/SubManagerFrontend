@@ -4,44 +4,47 @@ import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { MatTableModule } from "@angular/material/table";
 import { Router } from "@angular/router";
+import {MatButton} from "@angular/material/button";
 @Component({
   selector: "app-subscriptions-list",
   standalone: true,
-  imports: [HttpClientModule, CommonModule, MatTableModule],
+  imports: [HttpClientModule, CommonModule, MatTableModule, MatButton],
   templateUrl: "./subscriptions-list.component.html",
   styleUrl: "./subscriptions-list.component.css",
 })
 export class SubscriptionsListComponent implements OnInit {
   subscriptions: any[] = [];
-  columnsToDisplay: string[] = ["id", "provider", "paymentCost"];
+  columnsToDisplay: string[] = ["id", "provider", "paymentCost", "Switch-Status"];
 
   constructor(
     private apiService: ApiService,
     private router: Router,
   ) {}
 
-  ngOnInit(): void {
-    this.apiService.getAllSubscriptions().subscribe(
-      (data) => (this.subscriptions = data),
-      (error) => {
-        console.error("Error fetching subscriptions", error);
-        this.router.navigate(["/login"]);
+  changeStatus(id:any) {
+    this.apiService.changeStatus(id).subscribe(
+      (data) => {
+        console.log('Subscription status changed');
+        // Refetch the subscriptions after status change
+        this.fetchSubscriptions();
       },
+      (error) => {
+        console.error('Error changing subscription status', error);
+      }
     );
   }
 
-  changeStatus(id:any) {
-    this.apiService.changeStatus(id).subscribe(
-      () => {
-        this.subscriptions = this.subscriptions.map((subscription) => {
-          if (subscription.id === id) {
-            subscription.active = !subscription.active;
-          }
-          return subscription;
-        });
-      },
-      (error) => console.error("Error changing subscription status", error),
+  fetchSubscriptions(): void {
+    this.apiService.getAllSubscriptions().subscribe(
+      (data) => this.subscriptions = data,
+      (error) => {
+        console.error('Error fetching subscriptions', error);
+        this.router.navigate(['/login']);
+      }
     );
+  }
 
+  ngOnInit(): void {
+    this.fetchSubscriptions();
   }
 }
