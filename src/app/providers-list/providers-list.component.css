@@ -1,0 +1,46 @@
+.providers-table {
+    width: 100%;
+}
+
+.mat-header-cell,
+.mat-cell {
+    text-align: left;
+    padding: 8px;
+}
+
+.provider-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.provider-card {
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row, minus the gap */
+    max-width: 200px; /* Set a maximum width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0; /* Adjusted margin to align items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.provider-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    margin-top: 10px;
+    background-color: #3f51b5;
+    color: white;
+}
+
+.add-button:hover {
+    background-color: #303f9f;
+}
