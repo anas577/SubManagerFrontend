@@ -20,7 +20,7 @@ export class SideNavComponent {
     },
     {
       title: "Subscriptions",
-      link: "susbscriptions/list",
+      link: "subscriptions/list",
     },
     {
       title: "Notifications",

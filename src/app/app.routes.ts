@@ -8,11 +8,11 @@ import { NotificationsComponent } from "./notifications/notifications.component"
 import { SettingsComponent } from "./settings/settings.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 export const routes: Routes = [
-  { path: "user-profile", component: UserProfileComponent },
-  { path: "settings/view", component: SettingsComponent },
-  { path: "notifications/view", component: NotificationsComponent },
-  { path: "dashboard/view", component: DashboardComponent },
-  { path: "susbscriptions/list", component: SubscriptionsListComponent },
+  { path: "user-profile", component: UserProfileComponent, canActivate: [AuthGuard] },
+  { path: "settings/view", component: SettingsComponent, canActivate: [AuthGuard] },
+  { path: "notifications/view", component: NotificationsComponent, canActivate: [AuthGuard] },
+  { path: "dashboard/view", component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: "subscriptions/list", component: SubscriptionsListComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
   { path: "", component: HomeComponent, canActivate: [AuthGuard] }, // Protected route
 ];

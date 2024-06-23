@@ -2,7 +2,7 @@
     <button mat-icon-button (click)="menuClicked.emit()">
         <mat-icon>menu</mat-icon>
     </button>
-    <h1>Susbscription Manager</h1>
+    <h1>Subscription Manager</h1>
 
     <div class="user-info">
         <span> </span>
@@ -12,15 +12,11 @@
     </div>
 
     <mat-menu #userMenu="matMenu">
-        <button mat-menu-item routerLink="/login">
-            <mat-icon>login</mat-icon>
-            <span>Login</span>
-        </button>
-        <button mat-menu-item routerLink="user-profile">
+        <button mat-menu-item routerLink="/users/profile">
             <mat-icon>account_box</mat-icon>
             <span>Profile</span>
         </button>
-        <button mat-menu-item (click)="logOut()">
+        <button mat-menu-item *ngIf="isAuthenticated()" (click)="logout()">
             <mat-icon>logout</mat-icon>
             <span>Log Out</span>
         </button>

@@ -7,11 +7,11 @@ import { Subscription } from "../models/model";
   providedIn: "root",
 })
 export class ApiService {
-  baseUrl = "https://localhost:8085";
+  baseUrl = "http://localhost:8085";
 
   constructor(private http: HttpClient) {}
 
-  getAllSubscriptions(): Observable<Subscription[]> {
-    return this.http.get<Subscription[]>(`${this.baseUrl}/subscriptions`);
+  getAllSubscriptions(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/subscriptions`);
   }
 }

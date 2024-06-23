@@ -4,6 +4,8 @@ import { Subscription } from "../models/model";
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { MatTableModule } from "@angular/material/table";
+import {error} from "@angular/compiler-cli/src/transformers/util";
+import {Router} from "@angular/router";
 @Component({
   selector: "app-subscriptions-list",
   standalone: true,
@@ -12,14 +14,20 @@ import { MatTableModule } from "@angular/material/table";
   styleUrl: "./subscriptions-list.component.css",
 })
 export class SubscriptionsListComponent implements OnInit {
-  subscriptions: Subscription[] = [];
+  subscriptions: any[] = [];
   columnsToDisplay: string[] = ["id", "provider", "paymentCost"];
 
-  constructor(private apiService: ApiService) {}
+
+  constructor(private apiService: ApiService,private router:Router) {}
 
   ngOnInit(): void {
-    this.apiService.getAllSubscriptions().subscribe((subscriptions) => {
-      this.subscriptions = subscriptions;
-    });
+
+    this.apiService.getAllSubscriptions().subscribe(
+      (data) => this.subscriptions = data,
+      (error) => {
+        console.error('Error fetching subscriptions', error);
+        this.router.navigate(['/login']);
+      }
+    );
   }
 }
