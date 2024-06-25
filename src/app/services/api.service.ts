@@ -35,4 +35,7 @@ export class ApiService {
     return this.http.delete(`${this.baseUrl}/notifications/${id}`);
 
   }
+  addSubscription(subscription: any) {
+    return this.http.post(`${this.baseUrl}/subscriptions`, subscription);
+  }
 }

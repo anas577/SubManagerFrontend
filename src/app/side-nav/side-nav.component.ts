@@ -30,9 +30,5 @@ export class SideNavComponent {
       title: "Notifications",
       link: "notifications/view",
     },
-    {
-      title: "Settings",
-      link: "settings/view",
-    },
   ];
 }

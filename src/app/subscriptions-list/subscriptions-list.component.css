@@ -12,6 +12,7 @@
 
 .subscription-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  position: relative;
 }
 
 mat-card-header {
@@ -20,20 +21,37 @@ mat-card-header {
 }
 
 button {
-  background-color: #3f51b5;
+  border: 1px solid #000000;
   color: white;
-  border: none;
+
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+
+  margin: auto ;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
 button:hover {
   background-color: white;
-  color: #3f51b5;
+  color: rgba(0, 0, 0);
+}
+mat-card-actions {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  left: 0;
+}
+
+.inactive {
+  background-color: #f44336;
+}
+
+p{
+  margin-top : 20px;
+  font-size: 25px;
+  font-weight: bold;
 }
