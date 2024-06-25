@@ -1,1 +1,23 @@
-<p>dashboard works!</p>
+<mat-grid-list cols="3"  gutterSize="10px">
+  <mat-grid-tile colspan="2" >
+    <ngx-charts-pie-chart style="border: 1px solid white; border-radius:10px"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="pieChartData"
+      [legend]="showLegend"
+      [labels]="showLabels"
+      [explodeSlices]="explodeSlices"
+      [doughnut]="doughnut">
+    </ngx-charts-pie-chart>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1" >
+    <mat-card class="spending">
+      <mat-card-header>
+        <mat-card-title>Total Spendings</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="amount">
+        {{totalSpendings | currency}}
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

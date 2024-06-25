@@ -46,5 +46,6 @@ export class SubscriptionsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchSubscriptions();
+    console.log(this.subscriptions);
   }
 }
