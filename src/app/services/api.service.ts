@@ -22,4 +22,8 @@ export class ApiService {
     return this.http.put(`${this.baseUrl}/subscriptions/changeStatus/${id}`, {});
 
   }
+
+  getPayments(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/payments`);
+  }
 }
