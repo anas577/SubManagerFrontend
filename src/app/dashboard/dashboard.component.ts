@@ -3,7 +3,7 @@ import {ApiService} from "../services/api.service";
 import {Router} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {AsyncPipe, CommonModule, NgFor} from "@angular/common";
-import {MatGridList, MatGridTile} from "@angular/material/grid-list";
+import {MatGridList, MatGridTile, MatGridTileText} from "@angular/material/grid-list";
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 import {NgxChartsModule} from "@swimlane/ngx-charts";
 
@@ -21,7 +21,8 @@ import {NgxChartsModule} from "@swimlane/ngx-charts";
     MatCardTitle,
     NgxChartsModule,
     NgFor,
-    AsyncPipe
+    AsyncPipe,
+    MatGridTileText
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
