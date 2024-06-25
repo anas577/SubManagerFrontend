@@ -1,1 +1,18 @@
-<p>settings works!</p>
+<mat-grid-list cols="3" gutterSize="10px">
+  <mat-grid-tile colspan="3">
+    <ngx-charts-bar-vertical
+      [view]="barChartView"
+      [scheme]="colorScheme"
+      [results]="barChartData"
+      [legend]="true"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [barPadding]="barPadding"
+    >
+    </ngx-charts-bar-vertical>
+  </mat-grid-tile>
+</mat-grid-list>

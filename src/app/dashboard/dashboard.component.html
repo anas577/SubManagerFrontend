@@ -1,4 +1,5 @@
-<mat-grid-list cols="3"  gutterSize="10px">
+<mat-grid-list cols="3" >
+
   <mat-grid-tile colspan="2" >
     <ngx-charts-pie-chart style="border: 1px solid white; border-radius:10px"
       [view]="view"
@@ -19,5 +20,22 @@
         {{totalSpendings | currency}}
       </mat-card-content>
     </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="3">
+    <ngx-charts-bar-vertical style="border: 1px solid white; border-radius:10px"
+      [view]="barChartView"
+      [scheme]="colorScheme"
+      [results]="barChartData"
+      [legend]="true"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [barPadding]="barPadding"
+    >
+    </ngx-charts-bar-vertical>
   </mat-grid-tile>
 </mat-grid-list>
