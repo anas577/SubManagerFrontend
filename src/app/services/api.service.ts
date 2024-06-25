@@ -26,4 +26,13 @@ export class ApiService {
   getPayments(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/payments`);
   }
+
+  getNotifications(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/notifications`);
+  }
+
+  deleteNotification(id:number) {
+    return this.http.delete(`${this.baseUrl}/notifications/${id}`);
+
+  }
 }
