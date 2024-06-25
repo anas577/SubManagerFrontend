@@ -14,8 +14,8 @@ export class ApiService {
     return this.http.get<any[]>(`${this.baseUrl}/subscriptions`);
   }
 
-  getProviders(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/providers`);
+  getProviders(search:string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/providers?search=${search}`);
   }
 
   changeStatus(id: any) {

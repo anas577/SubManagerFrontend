@@ -1,13 +1,46 @@
 :host {
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    height: 70vh; /* Adjust to your needs */
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 70vh; /* Adjust to your needs */
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff; /* Deep purple text */
 }
 
 .form {
-    width: 300px; /* Adjust width as needed */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  width: 300px; /* Adjust width as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle box shadow */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Space between form groups */
+}
+
+mat-form-field {
+  width: 100%; /* Full width form fields */
+}
+
+button {
+  width: 100%; /* Full width button */
+  margin-top: 20px; /* Space above the button */
+}
+mat-form-field, button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Scale up the form fields and the button when they are focused or hovered over */
+mat-form-field:focus-within, button:hover {
+  transform: scale(1.05);
+}
+
+/* Change the background color and the color of the button when it is hovered over */
+button:hover {
+  background-color: #303f9f;
+  color: white;
 }

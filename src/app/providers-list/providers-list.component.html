@@ -1,10 +1,17 @@
+<div class="search-container">
+  <input [(ngModel)]="search" placeholder="Search providers">
+  <button (click)="searchProviders()">Search</button>
+</div>
+
 <div class="providers-container">
   <div *ngFor="let element of providers" class="provider-card">
-    <img
-      [src]="element.imageURL"
-      alt="{{element.name}}"
-      class="provider-image"
-    />
+    <div class="image-container">
+      <img
+        [src]="element.imageURL"
+        alt="{{element.name}}"
+        class="provider-image  "
+      />
+    </div>
     <span>{{element.name}}</span>
     <button
       (click)="redirectToSubscriptionForm(element.name)"
